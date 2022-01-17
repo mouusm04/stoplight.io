@@ -1,0 +1,17 @@
+{
+  "items":[
+    {
+    "type":"divider",
+    "title": "Getting started"
+  },
+  {  
+    "type":"divider",
+    "title": "Getting started",
+    "url":"docs/index.md"
+
+
+  }
+
+]
+
+}
