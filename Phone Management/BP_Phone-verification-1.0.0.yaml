@@ -1,17 +1,15 @@
----
 openapi: 3.0.0
 info:
   title: Sample Access Code Flow OAuth2 Project
-  description: |-
-
+  description: ''
 servers:
-- url: https://test/apexrest
-  description: Mock Server
+  - url: 'https://test/apexrest'
+    description: Mock Server
 paths:
   /phoneVerification:
     put:
       tags:
-      - Phone Verification
+        - Phone Verification
       summary: Check Method
       description: This WebService accepts PUT requests with a JSON body and below parameters that are wrapped in reqData object
       requestBody:
@@ -20,17 +18,17 @@ paths:
             schema:
               $ref: '#/components/schemas/checkmethod'
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/view'
       security:
-      - Bearer: []
+        - Bearer: []
     post:
       tags:
-      - Phone Verification
+        - Phone Verification
       summary: Start Method
       description: This WebService accepts POST requests with a JSON body and below parameters that are wrapped in reqData object.
       requestBody:
@@ -39,14 +37,14 @@ paths:
             schema:
               $ref: '#/components/schemas/startmethod'
       responses:
-        "200":
+        '200':
           description: Successful response
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/view'
       security:
-      - Bearer: []
+        - Bearer: []
 components:
   schemas:
     view:
@@ -67,6 +65,9 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/attributes'
+      x-examples:
+        example-1: {}
+      description: ''
     checkmethod:
       title: Check Method
       type: object
@@ -75,21 +76,21 @@ components:
           type: array
           items:
             allOf:
-            - $ref: '#/components/schemas/attributes'
-            - required:
-              - code
-              type: object
-              properties:
-                code:
-                  type: integer
-                  description: Verification Code
-                  example: 123
+              - $ref: '#/components/schemas/attributes'
+              - required:
+                  - code
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    description: Verification Code
+                    example: 123
     attributes:
       title: reqData
       required:
-      - countryCode
-      - phoneNumber
-      - sid
+        - countryCode
+        - phoneNumber
+        - sid
       type: object
       properties:
         phoneNumber:
