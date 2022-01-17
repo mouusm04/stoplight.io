@@ -5,7 +5,7 @@ info:
   description: |-
 
 servers:
-- url: https://bp-idp-pp.bpglobal.com/services/apexrest
+- url: https://test/apexrest
   description: Mock Server
 paths:
   /phoneVerification:

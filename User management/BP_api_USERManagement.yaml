@@ -6,7 +6,7 @@ info:
     
   version: 1.0.0
 servers:
-- url: https://bp-idp-pp.bpglobal.com
+- url: https://test.com
   description: Dev server
 paths:
   /services/data/{version}/subjects/user/{id}:

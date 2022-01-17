@@ -3,11 +3,10 @@ openapi: 3.0.0
 info:
   title: Sample Access Code Flow OAuth2 Project
   description: |-
-    <p>The Phone Verification API lets you request a verification code to be sent to the user and verify that the code received by the user is valid. This API is a proxy for a 3rd party service provided by <a href="https://www.twilio.com/docs/verify/api">Twilio</a>.</p> <p>Before using this API, your team will need to set up a Twilio account for billing purposes. This can be done here: <a href="https://bp.service-now.com/nav_to.do?uri=%2Fx_bpin_twilio_requ_twilio_request_details.do%3Fsys_id%3D-1%26sysparm_stack%3Dx_bpin_twilio_requ_twilio_request_details_list.do">Twilio Service Offering.</a> You will be given an account number (SID) which you will need to provide to the Idp team so they can configure your access to the Phone Verification API.</p> <p>Once a Twilio account is set up, your team will get a free 90 day period for POC, after which you will need to move to a Production state.</p>
-    <h2>Overview</h2> <p>To verify a user's phone number, request a verification code using the Start Method. The verification code is valid for 10 minutes. Subsequent calls to this service within the expiration time will send the same code.</p> <p>To verify the code entered by a user, pass it along with the phone number to the Check Method. Upon a successful request, the service updates the REIDP_Verified_Phone_c (not accessible to the user) and Phone fields on the user record. An Application should then check the REIDP_Is_Phone_Verified_c field (use the <a href="https://bp365.sharepoint.com/sites/IdentityAccessManagementIAMHub/SitePages/User-Management.aspx">User Management API's </a> to do this) to validate if the current value saved in Phone field is verified, this is done to avoid cases where a user updates the Phone field with an unverified number through the user console or another application.</p>
+
   version: 1.0.0
 servers:
-- url: https://bp-idp-pp.bpglobal.com/services/apexrest
+- url: https://test/services/apexrest
   description: Mock Server
 paths:
   /phoneVerification:
